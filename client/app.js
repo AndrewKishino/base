@@ -23,7 +23,7 @@
    * config() Bootstraps the initial configuration for our application, setting
    * up the states based on UI Router. Returns nothing.
    */
-  function config($stateProvider, $urlRouterProvider) {
+  function config($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
@@ -32,6 +32,7 @@
         templateUrl: 'components/home/home.html'
       });
 
+    $locationProvider.html5Mode(true);
   }
 
   /**

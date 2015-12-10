@@ -9,6 +9,10 @@ module.exports = function (app, express) {
   app.use(bodyParser.json());
   app.use(express.static(path.join(__dirname + '/../../client')));
 
+  // app.all('/*', function(req, res, next) {
+  //     res.sendFile(path.join(__dirname + '/../../client'), { root: __dirname });
+  // });
+
   // define routers
   var usersRouter = express.Router();
 };

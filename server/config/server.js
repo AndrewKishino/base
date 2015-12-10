@@ -1,4 +1,4 @@
-// boot up express express
+// boot up express
 var express = require('express');
 var app = express();
 
@@ -6,8 +6,7 @@ var app = express();
 require('./middleware.js')(app, express);
 
 // set port
-app.set('port', (process.env.PORT || 5000));  
-console.log('Listening on port ' + app.get('port'));
+app.set('port', (process.env.PORT || 5000));
 
 // export our app for testing
 module.exports = app;

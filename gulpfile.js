@@ -32,10 +32,16 @@
   /**
    * Paths
    */
+
   var paths = {
     sass: ['./client/sass/**/*.scss'],
     scripts: ['./gulpfile.js', './client/**/*.js', '!./client/lib/**/*.js', './server/**/*.js']
   };
+
+  var sassPaths = [
+    './client/lib/foundation-sites/scss',
+    './client/lib/motion-ui/src'
+  ];
 
   /**
    * CSS compilation
@@ -43,6 +49,7 @@
   gulp.task('styles', function() {
     return gulp.src(paths.sass)
       .pipe(sass({
+        includePaths: sassPaths,
         outputStyle: 'expanded'
       }))
       .on('error', notify.onError({
